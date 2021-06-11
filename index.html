@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--CSS link-->
+	<link rel="stylesheet" href="./style.css">
+
+	<!--Fonts-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+		rel="stylesheet">
+
+	<!--jQuery Core 3.6.0 minified -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<title>Login Form</title>
+</head>
+
+<body>
+	<div class="container">
+		<form id="login_form">
+			<h1>Login</h1>
+			<fieldset class="form_fieldset form_fieldset-username">
+				<input class="fieldset_input fieldset_input-username" id="username" type="text" name="username"
+					tabindex="1" required autocomplete="off">
+				<label for="username" class="fieldset_label">
+					<span class="input_name">Username</span>
+				</label>
+			</fieldset>
+			<fieldset class="form_fieldset form_fieldset-username">
+				<input class="fieldset_input fieldset_input-password" id="password" type="password" name="password"
+					tabindex="2" required autocomplete="off">
+				<label for="password" class="fieldset_label">
+					<span class="input_name">Password</span>
+				</label>
+			</fieldset>
+			<button class="form_button" name="submit" type="submit" id="form-submit"
+				data-submit="...Sending">Submit</button>
+			<p class="valid" id="valid">Welcome Admin!</p>
+			<p class="error" id="error">Error: you entered a wrong username or password.<span> Tip: Username = "Admin"
+					and Password
+					= "password"</span></p>
+		</form>
+		<p class="sign_up_text">Need an account? <a class="sign_up_link" href="#">Sign Up</a></p>
+	</div>
+
+	<!--site.js link-->
+	<script src="./site.js"></script>
+</body>
+
+</html>
