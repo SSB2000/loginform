@@ -8,6 +8,10 @@
   font-size: 20px;
 }
 
+:root {
+  --primary-background-clr: #dce1fd;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -20,7 +24,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140, 0.03) 0%, rgba(140, 140, 140, 0.03) 25%, transparent 25%, transparent 100%), radial-gradient(circle at 28% 63%, rgba(143, 143, 143, 0.03) 0%, rgba(143, 143, 143, 0.03) 16%, transparent 16%, transparent 100%), radial-gradient(circle at 81% 56%, rgba(65, 65, 65, 0.03) 0%, rgba(65, 65, 65, 0.03) 12%, transparent 12%, transparent 100%), radial-gradient(circle at 26% 48%, rgba(60, 60, 60, 0.03) 0%, rgba(60, 60, 60, 0.03) 6%, transparent 6%, transparent 100%), radial-gradient(circle at 97% 17%, rgba(150, 150, 150, 0.03) 0%, rgba(150, 150, 150, 0.03) 56%, transparent 56%, transparent 100%), radial-gradient(circle at 50% 100%, rgba(25, 25, 25, 0.03) 0%, rgba(25, 25, 25, 0.03) 36%, transparent 36%, transparent 100%), radial-gradient(circle at 55% 52%, rgba(69, 69, 69, 0.03) 0%, rgba(69, 69, 69, 0.03) 6%, transparent 6%, transparent 100%), -webkit-gradient(linear, left top, right top, from(white), to(white));
+  background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140, 0.03) 0%, rgba(140, 140, 140, 0.03) 25%, transparent 25%, transparent 100%), radial-gradient(circle at 28% 63%, rgba(143, 143, 143, 0.03) 0%, rgba(143, 143, 143, 0.03) 16%, transparent 16%, transparent 100%), radial-gradient(circle at 81% 56%, rgba(65, 65, 65, 0.03) 0%, rgba(65, 65, 65, 0.03) 12%, transparent 12%, transparent 100%), radial-gradient(circle at 26% 48%, rgba(60, 60, 60, 0.03) 0%, rgba(60, 60, 60, 0.03) 6%, transparent 6%, transparent 100%), radial-gradient(circle at 97% 17%, rgba(150, 150, 150, 0.03) 0%, rgba(150, 150, 150, 0.03) 56%, transparent 56%, transparent 100%), radial-gradient(circle at 50% 100%, rgba(25, 25, 25, 0.03) 0%, rgba(25, 25, 25, 0.03) 36%, transparent 36%, transparent 100%), radial-gradient(circle at 55% 52%, rgba(69, 69, 69, 0.03) 0%, rgba(69, 69, 69, 0.03) 6%, transparent 6%, transparent 100%), linear-gradient(90deg, white, white);
 }
 
 h1 {
@@ -33,28 +39,32 @@ h1 {
   text-align: center;
   width: 400px;
   max-width: 95%;
-  padding: 2em;
-  background-color: #bebebe;
+  padding: 1em;
+  background-color: var(--primary-background-clr);
   color: black;
-  -webkit-box-shadow: 3px 4px #414141;
-          box-shadow: 3px 4px #414141;
+  -webkit-box-shadow: 3px 4px #464646;
+          box-shadow: 3px 4px #464646;
 }
 
-.container h1 {
-  width: 100px;
-  padding-bottom: .105em;
-  margin: .5em auto;
-  border-bottom: 1px #5b1010 solid;
+.container .logo {
+  margin: 0.5em auto;
+  width: 200px;
+  background-color: var(--primary-background-clr);
+}
+
+.container .logo .logo-img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container .error,
 .container .valid {
-  margin: .3em auto;
+  margin: 0.3em auto;
   display: none;
-  font-size: .6em;
-  border: 1px solid #160000;
+  font-size: 0.6em;
   border-radius: 5px;
-  padding: .3em;
+  padding: 0.3em;
   width: 95%;
 }
 
@@ -66,7 +76,7 @@ h1 {
 
 .form_fieldset {
   border: none !important;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   font-size: 1em;
   width: 100%;
   height: 50px;
@@ -77,13 +87,11 @@ h1 {
 .form_fieldset .fieldset_input {
   width: 100%;
   height: 100%;
-  color: #595f6e;
   padding-top: 15px;
   border: none;
   outline: none;
   padding-left: 5px;
-  border-radius: 25px;
-  background-color: #bebebe;
+  background-color: var(--primary-background-clr);
 }
 
 .form_fieldset .fieldset_input:focus + .fieldset_label .input_name,
@@ -137,13 +145,13 @@ h1 {
 }
 
 .form_button {
-  padding: .3em 1em;
-  margin-bottom: .3em;
+  padding: 0.5em 1.5em;
+  margin: 0 auto .5em 0;
   border-radius: 8px;
   outline: none;
   border: none;
-  background-color: #0d0d1d;
-  color: darkgray;
+  background-color: black;
+  color: white;
 }
 
 .form_button:hover {
@@ -151,8 +159,36 @@ h1 {
   color: white;
 }
 
+.oauth-login {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: .5em;
+}
+
+.oauth-login .login {
+  width: 50%;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: .2em 0;
+}
+
+.oauth-login .google-login {
+  background-color: #3e82f7;
+  color: white;
+}
+
+.oauth-login .facebook-login {
+  background-color: #4065B4;
+  color: white;
+}
+
 .sign_up_text {
   font-size: 0.75em;
+  margin-top: .5em;
 }
 
 .sign_up_text .sign_up_link {

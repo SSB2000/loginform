@@ -22,8 +22,10 @@
 
 <body>
 	<div class="container">
+		<div class="logo">
+			<img src="./cureya-logo.png" alt="Cureya logo" class="logo-img">
+		</div>
 		<form id="login_form">
-			<h1>Login</h1>
 			<fieldset class="form_fieldset form_fieldset-username">
 				<input class="fieldset_input fieldset_input-username" id="username" type="text" name="username"
 					tabindex="1" required autocomplete="off">
@@ -38,14 +40,19 @@
 					<span class="input_name">Password</span>
 				</label>
 			</fieldset>
-			<button class="form_button" name="submit" type="submit" id="form-submit"
-				data-submit="...Sending">Submit</button>
+			<button class="form_button" name="submit" type="submit" id="form-submit" data-submit="...Sending">Log
+				in!</button>
 			<p class="valid" id="valid">Welcome Admin!</p>
 			<p class="error" id="error">Error: you entered a wrong username or password.<span> Tip: Username = "Admin"
 					and Password
 					= "password"</span></p>
 		</form>
-		<p class="sign_up_text">Need an account? <a class="sign_up_link" href="#">Sign Up</a></p>
+		<p>or</p>
+		<div class="oauth-login">
+			<div class="login google-login">Google</div>
+			<div class="login facebook-login">Facebook</div>
+		</div>
+		<p class="sign_up_text">Create a new Cureya account <a class="sign_up_link" href="#">Sign Up</a></p>
 	</div>
 
 	<!--site.js link-->
