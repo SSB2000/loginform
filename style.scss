@@ -1,0 +1,199 @@
+//I used sass to make code more readable and for better modularity.
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+//Variables and Functions
+
+//Variables
+$font-h1: 2rem;
+$font-p: 0.75em;
+
+:root {
+    --primary-background-clr: #dce1fd;
+}
+
+//Functions
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//General styles
+body {
+    width: 100vw;
+    height: 100vh;
+    @include flexCenter();
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    background: linear-gradient(180deg, #ffffff 0%, #000000 100%),
+        linear-gradient(90deg, #ffffff 0%, #000000 100%), #00ffff;
+    background-blend-mode: multiply, screen, normal;
+}
+
+h1 {
+    font-size: $font-h1;
+}
+
+//CSS Classes
+.container {
+    text-align: center;
+    border-radius: 10px;
+    text-align: center;
+    width: 800px;
+    max-width: 95%;
+    padding: 1em;
+    background-color: var(--primary-background-clr);
+    color: rgb(0, 0, 0);
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    .logo {
+        margin: 0.5em auto;
+        width: 200px;
+        background-color: var(--primary-background-clr);
+        .logo-img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .form {
+        position: absolute;
+        width: 760px;
+        transition: all 500ms;
+
+        .form-cont {
+            display: flex;
+            justify-content: space-between;
+            .form-cont-child {
+                width: 46%;
+            }
+            margin-bottom: 1.6em;
+        }
+
+        .top-label {
+            font-size: 1em;
+            padding-bottom: 0.1em;
+            display: block;
+            text-align: left;
+            color: hsl(197, 95%, 8%);
+            padding-left: 0.2em;
+            margin-bottom: 0.3em;
+        }
+
+        .edu-label {
+            font-size: 0.7em;
+            padding-bottom: 0.1em;
+            width: 150px;
+            display: block;
+            text-align: left;
+            color: hsl(120, 94%, 13%);
+            padding-left: 0.2em;
+            margin-bottom: 0.3em;
+        }
+
+        .btn-cont-1 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-cont {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    #edu {
+        left: 900px;
+    }
+
+    #address {
+        left: 900px;
+    }
+}
+
+.form_fieldset {
+    border: none !important;
+    margin-bottom: 1em;
+    font-size: 1em;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    text-align: left;
+
+    .fieldset_input {
+        width: 100%;
+        height: 100%;
+        padding-top: 15px;
+        border: none;
+        outline: none;
+        padding-left: 5px;
+        &:focus + .fieldset_label .input_name,
+        &:valid + .fieldset_label .input_name {
+            transform: translateY(-150%);
+            font-size: 15px;
+            color: rgb(31, 0, 0);
+        }
+
+        &:focus + .fieldset_label::after,
+        &:valid + .fieldset_label::after {
+            transform: translateX(0.1%);
+        }
+        background-color: var(--primary-background-clr);
+    }
+
+    .fieldset_label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        color: black;
+        border-bottom: 1px solid black;
+        overflow: hidden;
+        color: rgb(0, 0, 0);
+        padding-left: 10px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-bottom: 3px solid rgb(80, 0, 0);
+            left: 0;
+            bottom: -1px;
+            transform: translateX(-100%);
+            transition: trasform 0.3s ease;
+        }
+
+        .input_name {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+.form_button {
+    padding: 0.3em 0.7em;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--CSS link-->
+	<link rel="stylesheet" href="./style.css">
+
+	<!--Fonts-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+		rel="stylesheet">
+
+	<!--jQuery Core 3.6.0 minified -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<title>Login Form</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="logo">
+			<img src="./cureya-logo.png" alt="Cureya logo" class="logo-img">
+		</div>
+		<form class="form" id="personal">
+			<legend class="top-label">Personal Information</legend>
+			<div class="form-cont">
+				<div class="form-cont-child">
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-username" id="fname" type="text" name="fname"
+							required autocomplete=" off">
+						<label for="fname" class="fieldset_label">
+							<span class="input_name">First Name*</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="phone-num" type="tel" name="phone-num"
+							required autocomplete="off">
+						<label for="phone-num" class="fieldset_label">
+							<span class="input_name">Phone Number*</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="dob" type="datetime" name="dob"
+							required autocomplete="off">
+						<label for="dob" class="fieldset_label">
+							<span class="input_name">Date of Birth*</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="r-id" type="datetime" name="r-id"
+							required autocomplete="off">
+						<label for="r-id" class="fieldset_label">
+							<span class="input_name">Registration ID*</span>
+						</label>
+					</fieldset>
+				</div>
+				<div class="form-cont-child">
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-username" id="lname" type="text" name="lname"
+							required autocomplete="off">
+						<label for="lname" class="fieldset_label">
+							<span class="input_name">Last Name*</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="gender" type="email" name="gender"
+							required autocomplete="off">
+						<label for="gender" class="fieldset_label">
+							<span class="input_name">Gender*</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="email" type="text" name="email"
+							required autocomplete="off">
+						<label for="email" class="fieldset_label">
+							<span class="input_name">Email*</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="specialization" type="text"
+							name="specialization" required autocomplete="off">
+						<label for="specialization" class="fieldset_label">
+							<span class="input_name">Specialization*</span>
+						</label>
+					</fieldset>
+				</div>
+			</div>
+			<div class="btn-cont-1">
+				<button class="form_button" type="button" id="button1n">NEXT</button>
+			</div>
+		</form>
+		<form class="form" id="address">
+			<legend class="top-label">Address</legend>
+			<div class="form-cont">
+				<div class="form-cont-child">
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-username" id="house-no" type="text"
+							name="specialization" required autocomplete="off">
+						<label for="specialization" class="fieldset_label">
+							<span class="input_name">House No/ Street no/ Area</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="city" type="text" name="city" required
+							autocomplete="off">
+						<label for="city" class="fieldset_label">
+							<span class="input_name">City</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="country" type="text" name="country"
+							required autocomplete="off">
+						<label for="country" class="fieldset_label">
+							<span class="input_name">Country</span>
+						</label>
+					</fieldset>
+				</div>
+				<div class="form-cont-child">
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-username" id="colony" type="text" name="colony"
+							required autocomplete="off">
+						<label for="colony" class="fieldset_label">
+							<span class="input_name">Colony/ Street</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-username" id="state" type="text" name="state"
+							required autocomplete="off">
+						<label for="state" class="fieldset_label">
+							<span class="input_name">State</span>
+						</label>
+					</fieldset>
+					<fieldset class="form_fieldset form_fieldset-username">
+						<input class="fieldset_input fieldset_input-password" id="pincode" type="text" name="pincode"
+							required autocomplete="off">
+						<label for="pincode" class="fieldset_label">
+							<span class="input_name">Pincode</span>
+						</label>
+					</fieldset>
+				</div>
+			</div>
+			<div class="btn-cont">
+				<button class="form_button" type="button" id="button2p">Back</button>
+				<button class="form_button" type="button" id="button2n">Next</button>
+			</div>
+		</form>
+		<form class="form" id="edu">
+			<form class="form" id="address">
+				<legend class="top-label">Education Details</legend>
+				<p class="edu-label">Graduation Details </p>
+				<div class="form-cont">
+					<div class="form-cont-child">
+						<fieldset class="form_fieldset form_fieldset-username">
+							<input class="fieldset_input fieldset_input-username" id="univ-grad" type="text"
+								name="univ-grad" required autocomplete="off">
+							<label for="univ-grad" class="fieldset_label">
+								<span class="input_name">University/ College*</span>
+							</label>
+						</fieldset>
+						<fieldset class="form_fieldset form_fieldset-username">
+							<input class="fieldset_input fieldset_input-password" id="year-of-passing" type="text"
+								name="year-of-passing" required autocomplete="off">
+							<label for="password" class="fieldset_label">
+								<span class="input_name">Year of passing*</span>
+							</label>
+						</fieldset>
+					</div>
+					<div class="form-cont-child">
+						<fieldset class="form_fieldset form_fieldset-username">
+							<input class="fieldset_input fieldset_input-username" id="field-grad" type="text"
+								name="field-grad" required autocomplete="off">
+							<label for="field-grad" class="fieldset_label">
+								<span class="input_name">Field*</span>
+							</label>
+						</fieldset>
+					</div>
+				</div>
+				<p class="edu-label">Post Graduation Details</p>
+				<div class="form-cont">
+					<div class="form-cont-child">
+						<fieldset class="form_fieldset form_fieldset-username">
+							<input class="fieldset_input fieldset_input-username" id="univ" type="text" name="univ"
+								required autocomplete="off">
+							<label for="univ" class="fieldset_label">
+								<span class="input_name">University/ College</span>
+							</label>
+						</fieldset>
+						<fieldset class="form_fieldset form_fieldset-username">
+							<input class="fieldset_input fieldset_input-password" id="yop-post" type="text"
+								name="yop-post" required autocomplete="off">
+							<label for="yop-post" class="fieldset_label">
+								<span class="input_name">Year of passing</span>
+							</label>
+						</fieldset>
+					</div>
+					<div class="form-cont-child">
+						<fieldset class="form_fieldset form_fieldset-username">
+							<input class="fieldset_input fieldset_input-username" id="field-post" type="text"
+								name="field-post" required autocomplete="off">
+							<label for="field-post" class="fieldset_label">
+								<span class="input_name">Field</span>
+							</label>
+						</fieldset>
+					</div>
+				</div>
+				<div class="btn-cont">
+					<button class="form_button" type="button" id="button3p">Back</button>
+					<button class="form_button" type="button" id="button3n">Finish</button>
+				</div>
+			</form>
+
+
+	</div>
+
+	<!--site.js link-->
+	<script src="./site.js"></script>
+</body>
+
+</html>

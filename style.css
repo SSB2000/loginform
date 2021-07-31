@@ -1,0 +1,215 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 20px;
+}
+
+:root {
+  --primary-background-clr: #dce1fd;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#000000)), -webkit-gradient(linear, left top, right top, from(#ffffff), to(#000000)), #00ffff;
+  background: linear-gradient(180deg, #ffffff 0%, #000000 100%), linear-gradient(90deg, #ffffff 0%, #000000 100%), #00ffff;
+  background-blend-mode: multiply, screen, normal;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.container {
+  text-align: center;
+  border-radius: 10px;
+  text-align: center;
+  width: 800px;
+  max-width: 95%;
+  padding: 1em;
+  background-color: var(--primary-background-clr);
+  color: black;
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.container .logo {
+  margin: 0.5em auto;
+  width: 200px;
+  background-color: var(--primary-background-clr);
+}
+
+.container .logo .logo-img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .form {
+  position: absolute;
+  width: 760px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.container .form .form-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.6em;
+}
+
+.container .form .form-cont .form-cont-child {
+  width: 46%;
+}
+
+.container .form .top-label {
+  font-size: 1em;
+  padding-bottom: 0.1em;
+  display: block;
+  text-align: left;
+  color: #011d28;
+  padding-left: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+.container .form .edu-label {
+  font-size: 0.7em;
+  padding-bottom: 0.1em;
+  width: 150px;
+  display: block;
+  text-align: left;
+  color: #024002;
+  padding-left: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+.container .form .btn-cont-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .form .btn-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container #edu {
+  left: 900px;
+}
+
+.container #address {
+  left: 900px;
+}
+
+.form_fieldset {
+  border: none !important;
+  margin-bottom: 1em;
+  font-size: 1em;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  text-align: left;
+}
+
+.form_fieldset .fieldset_input {
+  width: 100%;
+  height: 100%;
+  padding-top: 15px;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  background-color: var(--primary-background-clr);
+}
+
+.form_fieldset .fieldset_input:focus + .fieldset_label .input_name,
+.form_fieldset .fieldset_input:valid + .fieldset_label .input_name {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  font-size: 15px;
+  color: #1f0000;
+}
+
+.form_fieldset .fieldset_input:focus + .fieldset_label::after,
+.form_fieldset .fieldset_input:valid + .fieldset_label::after {
+  -webkit-transform: translateX(0.1%);
+          transform: translateX(0.1%);
+}
+
+.form_fieldset .fieldset_label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  color: black;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+  color: black;
+  padding-left: 10px;
+}
+
+.form_fieldset .fieldset_label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid #500000;
+  left: 0;
+  bottom: -1px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: trasform 0.3s ease;
+  transition: trasform 0.3s ease;
+}
+
+.form_fieldset .fieldset_label .input_name {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.form_button {
+  padding: 0.3em 0.7em;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.form_button:hover {
+  background-color: black;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
