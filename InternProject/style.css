@@ -25,8 +25,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-family: "Roboto", sans-serif;
-  background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140, 0.03) 0%, rgba(140, 140, 140, 0.03) 25%, transparent 25%, transparent 100%), radial-gradient(circle at 28% 63%, rgba(143, 143, 143, 0.03) 0%, rgba(143, 143, 143, 0.03) 16%, transparent 16%, transparent 100%), radial-gradient(circle at 81% 56%, rgba(65, 65, 65, 0.03) 0%, rgba(65, 65, 65, 0.03) 12%, transparent 12%, transparent 100%), radial-gradient(circle at 26% 48%, rgba(60, 60, 60, 0.03) 0%, rgba(60, 60, 60, 0.03) 6%, transparent 6%, transparent 100%), radial-gradient(circle at 97% 17%, rgba(150, 150, 150, 0.03) 0%, rgba(150, 150, 150, 0.03) 56%, transparent 56%, transparent 100%), radial-gradient(circle at 50% 100%, rgba(25, 25, 25, 0.03) 0%, rgba(25, 25, 25, 0.03) 36%, transparent 36%, transparent 100%), radial-gradient(circle at 55% 52%, rgba(69, 69, 69, 0.03) 0%, rgba(69, 69, 69, 0.03) 6%, transparent 6%, transparent 100%), -webkit-gradient(linear, left top, right top, from(white), to(white));
-  background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140, 0.03) 0%, rgba(140, 140, 140, 0.03) 25%, transparent 25%, transparent 100%), radial-gradient(circle at 28% 63%, rgba(143, 143, 143, 0.03) 0%, rgba(143, 143, 143, 0.03) 16%, transparent 16%, transparent 100%), radial-gradient(circle at 81% 56%, rgba(65, 65, 65, 0.03) 0%, rgba(65, 65, 65, 0.03) 12%, transparent 12%, transparent 100%), radial-gradient(circle at 26% 48%, rgba(60, 60, 60, 0.03) 0%, rgba(60, 60, 60, 0.03) 6%, transparent 6%, transparent 100%), radial-gradient(circle at 97% 17%, rgba(150, 150, 150, 0.03) 0%, rgba(150, 150, 150, 0.03) 56%, transparent 56%, transparent 100%), radial-gradient(circle at 50% 100%, rgba(25, 25, 25, 0.03) 0%, rgba(25, 25, 25, 0.03) 36%, transparent 36%, transparent 100%), radial-gradient(circle at 55% 52%, rgba(69, 69, 69, 0.03) 0%, rgba(69, 69, 69, 0.03) 6%, transparent 6%, transparent 100%), linear-gradient(90deg, white, white);
+  background-color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#000000)), -webkit-gradient(linear, left top, right top, from(#ffffff), to(#000000)), #00ffff;
+  background: linear-gradient(180deg, #ffffff 0%, #000000 100%), linear-gradient(90deg, #ffffff 0%, #000000 100%), #00ffff;
+  background-blend-mode: multiply, screen, normal;
 }
 
 h1 {
@@ -37,13 +39,14 @@ h1 {
   text-align: center;
   border-radius: 10px;
   text-align: center;
-  width: 400px;
+  width: 800px;
   max-width: 95%;
   padding: 1em;
   background-color: var(--primary-background-clr);
   color: black;
-  -webkit-box-shadow: 3px 4px #464646;
-          box-shadow: 3px 4px #464646;
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
 }
 
 .container .logo {
@@ -58,20 +61,72 @@ h1 {
      object-fit: cover;
 }
 
-.container .error,
-.container .valid {
-  margin: 0.3em auto;
-  display: none;
-  font-size: 0.6em;
-  border-radius: 5px;
-  padding: 0.3em;
-  width: 95%;
+.container .form {
+  position: absolute;
+  width: 760px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
 }
 
-.container .error span,
-.container .valid span {
+.container .form .form-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.6em;
+}
+
+.container .form .form-cont .form-cont-child {
+  width: 46%;
+}
+
+.container .form .top-label {
   font-size: 1em;
+  padding-bottom: 0.1em;
   display: block;
+  text-align: left;
+  color: #011d28;
+  padding-left: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+.container .form .edu-label {
+  font-size: 0.7em;
+  padding-bottom: 0.1em;
+  width: 150px;
+  display: block;
+  text-align: left;
+  color: #024002;
+  padding-left: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+.container .form .btn-cont-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .form .btn-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container #edu {
+  left: 900px;
+}
+
+.container #address {
+  left: 900px;
 }
 
 .form_fieldset {
@@ -145,9 +200,8 @@ h1 {
 }
 
 .form_button {
-  padding: 0.5em 1.5em;
-  margin: 0 auto .5em 0;
-  border-radius: 8px;
+  padding: 0.3em 0.7em;
+  border-radius: 25px;
   outline: none;
   border: none;
   background-color: black;
@@ -157,47 +211,5 @@ h1 {
 .form_button:hover {
   background-color: black;
   color: white;
-}
-
-.oauth-login {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-top: .5em;
-}
-
-.oauth-login .login {
-  width: 50%;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: .2em 0;
-}
-
-.oauth-login .google-login {
-  background-color: #3e82f7;
-  color: white;
-}
-
-.oauth-login .facebook-login {
-  background-color: #4065B4;
-  color: white;
-}
-
-.sign_up_text {
-  font-size: 0.75em;
-  margin-top: .5em;
-}
-
-.sign_up_text .sign_up_link {
-  font-size: 1.1em;
-  text-decoration: none;
-  color: #494949;
-}
-
-.sign_up_text .sign_up_link:hover {
-  color: black;
 }
 /*# sourceMappingURL=style.css.map */
