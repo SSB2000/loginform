@@ -13,8 +13,11 @@
 
 //Variables
 $font-h1: 2rem;
-$font-p: .75em;
+$font-p: 0.75em;
 
+:root {
+    --primary-background-clr: #dce1fd;
+}
 
 //Functions
 @mixin flexCenter {
@@ -28,9 +31,12 @@ body {
     width: 100vw;
     height: 100vh;
     @include flexCenter();
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    background: linear-gradient(180deg, #ffffff 0%, #000000 100%),
+        linear-gradient(90deg, #ffffff 0%, #000000 100%), #00ffff;
+    background-blend-mode: multiply, screen, normal;
 }
-
 
 h1 {
     font-size: $font-h1;
@@ -41,40 +47,82 @@ h1 {
     text-align: center;
     border-radius: 10px;
     text-align: center;
-    width: 400px;
+    width: 800px;
     max-width: 95%;
-    padding: 2em;
-    background-color: rgb(190, 190, 190);
+    padding: 1em;
+    background-color: var(--primary-background-clr);
     color: rgb(0, 0, 0);
-    box-shadow: 3px 4px #414141;
-
-    h1 {
-        width: 100px;
-        padding-bottom: .105em;
-        margin: .5em auto;
-        border-bottom: 1px rgb(91, 16, 16) solid;
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    .logo {
+        margin: 0.5em auto;
+        width: 200px;
+        background-color: var(--primary-background-clr);
+        .logo-img {
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
-    .error,
-    .valid {
-        margin: .3em auto;
-        display: none;
-        font-size: .6em;
-        border: 1px solid rgb(22, 0, 0);
-        border-radius: 5px;
-        padding: .3em;
-        width: 95%;
+    .form {
+        position: absolute;
+        width: 760px;
+        transition: all 500ms;
 
-        span {
-            font-size: 1em;
-            display: block;
+        .form-cont {
+            display: flex;
+            justify-content: space-between;
+            .form-cont-child {
+                width: 46%;
+            }
+            margin-bottom: 1.6em;
         }
+
+        .top-label {
+            font-size: 1em;
+            padding-bottom: 0.1em;
+            display: block;
+            text-align: left;
+            color: hsl(197, 95%, 8%);
+            padding-left: 0.2em;
+            margin-bottom: 0.3em;
+        }
+
+        .edu-label {
+            font-size: 0.7em;
+            padding-bottom: 0.1em;
+            width: 150px;
+            display: block;
+            text-align: left;
+            color: hsl(120, 94%, 13%);
+            padding-left: 0.2em;
+            margin-bottom: 0.3em;
+        }
+
+        .btn-cont-1 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-cont {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    #edu {
+        left: 900px;
+    }
+
+    #address {
+        left: 900px;
     }
 }
 
 .form_fieldset {
     border: none !important;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     font-size: 1em;
     width: 100%;
     height: 50px;
@@ -84,25 +132,22 @@ h1 {
     .fieldset_input {
         width: 100%;
         height: 100%;
-        color: #595f6e;
         padding-top: 15px;
         border: none;
         outline: none;
         padding-left: 5px;
-        border-radius: 25px;
-        background-color: rgb(190, 190, 190);
-
-        &:focus+.fieldset_label .input_name,
-        &:valid+.fieldset_label .input_name {
+        &:focus + .fieldset_label .input_name,
+        &:valid + .fieldset_label .input_name {
             transform: translateY(-150%);
             font-size: 15px;
             color: rgb(31, 0, 0);
         }
 
-        &:focus+.fieldset_label::after,
-        &:valid+.fieldset_label::after {
-            transform: translateX(.1%);
+        &:focus + .fieldset_label::after,
+        &:valid + .fieldset_label::after {
+            transform: translateX(0.1%);
         }
+        background-color: var(--primary-background-clr);
     }
 
     .fieldset_label {
@@ -139,32 +184,16 @@ h1 {
     }
 }
 
-
 .form_button {
-    padding: .3em 1em;
-    margin-bottom: .3em;
-    border-radius: 8px;
+    padding: 0.3em 0.7em;
+    border-radius: 25px;
     outline: none;
     border: none;
-    background-color: rgb(13, 13, 29);
-    color: rgb(169, 169, 169);
+    background-color: black;
+    color: white;
 
     &:hover {
         background-color: black;
         color: white;
-    }
-}
-
-.sign_up_text {
-    font-size: $font-p;
-
-    .sign_up_link {
-        font-size: 1.1em;
-        text-decoration: none;
-        color: rgb(73, 73, 73);
-
-        &:hover {
-            color: rgb(0, 0, 0);
-        }
     }
 }

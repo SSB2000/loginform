@@ -8,6 +8,10 @@
   font-size: 20px;
 }
 
+:root {
+  --primary-background-clr: #dce1fd;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -20,7 +24,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#000000)), -webkit-gradient(linear, left top, right top, from(#ffffff), to(#000000)), #00ffff;
+  background: linear-gradient(180deg, #ffffff 0%, #000000 100%), linear-gradient(90deg, #ffffff 0%, #000000 100%), #00ffff;
+  background-blend-mode: multiply, screen, normal;
 }
 
 h1 {
@@ -31,42 +39,99 @@ h1 {
   text-align: center;
   border-radius: 10px;
   text-align: center;
-  width: 400px;
+  width: 800px;
   max-width: 95%;
-  padding: 2em;
-  background-color: #bebebe;
+  padding: 1em;
+  background-color: var(--primary-background-clr);
   color: black;
-  -webkit-box-shadow: 3px 4px #414141;
-          box-shadow: 3px 4px #414141;
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
 }
 
-.container h1 {
-  width: 100px;
-  padding-bottom: .105em;
-  margin: .5em auto;
-  border-bottom: 1px #5b1010 solid;
+.container .logo {
+  margin: 0.5em auto;
+  width: 200px;
+  background-color: var(--primary-background-clr);
 }
 
-.container .error,
-.container .valid {
-  margin: .3em auto;
-  display: none;
-  font-size: .6em;
-  border: 1px solid #160000;
-  border-radius: 5px;
-  padding: .3em;
-  width: 95%;
+.container .logo .logo-img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.container .error span,
-.container .valid span {
+.container .form {
+  position: absolute;
+  width: 760px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.container .form .form-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.6em;
+}
+
+.container .form .form-cont .form-cont-child {
+  width: 46%;
+}
+
+.container .form .top-label {
   font-size: 1em;
+  padding-bottom: 0.1em;
   display: block;
+  text-align: left;
+  color: #011d28;
+  padding-left: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+.container .form .edu-label {
+  font-size: 0.7em;
+  padding-bottom: 0.1em;
+  width: 150px;
+  display: block;
+  text-align: left;
+  color: #024002;
+  padding-left: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+.container .form .btn-cont-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .form .btn-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container #edu {
+  left: 900px;
+}
+
+.container #address {
+  left: 900px;
 }
 
 .form_fieldset {
   border: none !important;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   font-size: 1em;
   width: 100%;
   height: 50px;
@@ -77,13 +142,11 @@ h1 {
 .form_fieldset .fieldset_input {
   width: 100%;
   height: 100%;
-  color: #595f6e;
   padding-top: 15px;
   border: none;
   outline: none;
   padding-left: 5px;
-  border-radius: 25px;
-  background-color: #bebebe;
+  background-color: var(--primary-background-clr);
 }
 
 .form_fieldset .fieldset_input:focus + .fieldset_label .input_name,
@@ -137,31 +200,16 @@ h1 {
 }
 
 .form_button {
-  padding: .3em 1em;
-  margin-bottom: .3em;
-  border-radius: 8px;
+  padding: 0.3em 0.7em;
+  border-radius: 25px;
   outline: none;
   border: none;
-  background-color: #0d0d1d;
-  color: darkgray;
+  background-color: black;
+  color: white;
 }
 
 .form_button:hover {
   background-color: black;
   color: white;
-}
-
-.sign_up_text {
-  font-size: 0.75em;
-}
-
-.sign_up_text .sign_up_link {
-  font-size: 1.1em;
-  text-decoration: none;
-  color: #494949;
-}
-
-.sign_up_text .sign_up_link:hover {
-  color: black;
 }
 /*# sourceMappingURL=style.css.map */
