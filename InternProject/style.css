@@ -45,7 +45,7 @@ h1 {
   background-color: var(--primary-background-clr);
   color: black;
   position: relative;
-  height: 90vh;
+  height: 600px;
   overflow: hidden;
 }
 
@@ -110,9 +110,31 @@ h1 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  position: relative;
+}
+
+.container .form .btn-cont-1 .btn-1 {
+  position: absolute;
+  bottom: -113px;
 }
 
 .container .form .btn-cont {
+  position: relative;
+}
+
+.container .form .btn-cont .btn-cont-child-2 {
+  width: 760px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  bottom: -183px;
+}
+
+.container .form .btn-cont-3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
